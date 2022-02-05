@@ -92,9 +92,9 @@ export default {
     let used_phone_list = ref([
       {maker:"SONY", name:"Xperia XZ Premium", type:"SO-04J",career:"au", rom:"64", ram:"4",OS:"Android",Max_OS:9,img:"SO-04J.jpeg", s_id:"SSK600"},
       {maker:"Apple", name:"iPhone 6", type:"A1586",career:"SoftBank", rom:"64", ram:"1",OS:"iOS",Max_OS:12.5,img:"iPhone6.jpeg", s_id:"SSK100"},
-      {name:"iPhone 5s", type:"A1586",career:"Docomo", rom:"64", ram:"1", s_id:"SSK100"},
-      {name:"iPhone 4s", type:"A1586",career:"SIMフリー", rom:"64", ram:"1", s_id:"SSK100"},
-      {name:"iPhone 3Gs", type:"A1586",career:"SoftBank", rom:"64", s_id:"SSK100"},
+      {name:"iPhone 5s", type:"A1586",career:"Docomo", rom:"64", ram:"1",img:"none", s_id:"SSK100"},
+      {name:"iPhone 4s", type:"A1586",career:"SIMフリー", rom:"64", ram:"1",img:"none", s_id:"SSK100"},
+      {name:"iPhone 3Gs", type:"A1586",career:"SoftBank", rom:"64",ram:"1",img:"none", s_id:"SSK100"},
     ])
 
     let app_version = ref([
@@ -142,7 +142,11 @@ export default {
       state_phone_name.value = item.name;
       state_phone_type.value = item.type;
       state_phone_career.value = item.career;
-      state_phone_img.value = require('../img/' + item.img);
+      if(item.img != "none"){
+        state_phone_img.value = require("../img/" + item.img);
+      }else{
+        state_phone_img.value = require("../img/no-image.png");
+      }
       state_phone_s_id.value = item.s_id;
       phone_OS.value = item.OS;
       phone_Max_OS.value = item.Max_OS;
@@ -301,6 +305,7 @@ export default {
   .phone_state_border{
     border:solid 2px;
     border-radius:10px;
+    height:600px;
     margin:50px;
     background-color:rgb(255, 255, 255);
   }
