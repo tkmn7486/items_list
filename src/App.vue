@@ -1,6 +1,6 @@
 <template>
   <div class="shop_logo_space">
-    <img class="shop_logo" src="./img/smasta-main-logo.png">
+    <img class="shop_logo" src="./img/smasta_main_logo.png">
   </div>
   <div id="nav">
     <h2>
@@ -20,10 +20,6 @@
   color: #2c3e50;
 }
 
-html{
-  background-color:rgb(246, 240, 126);
-}
-
 #nav {
   padding: 30px;
 }
@@ -38,10 +34,11 @@ html{
 }
 
 .shop_logo_space{
-  text-align:left;
+  padding-top:20px;
+  text-align:center;
 }
 
 .shop_logo{
-  filter:saturate(60%)
+  width:50px;
 }
 </style>

@@ -375,4 +375,8 @@ export default {
   th,td{
     border:1px black solid;
   }
+
+  .career_icon{
+    margin-bottom:10px;
+  }
 </style>
