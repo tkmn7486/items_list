@@ -1,4 +1,7 @@
 <template>
+  <div class="shop_logo_space">
+    <img class="shop_logo" src="./img/smasta-main-logo.png">
+  </div>
   <div id="nav">
     <h2>
       <router-link to="/">端末一覧</router-link> |
@@ -17,6 +20,10 @@
   color: #2c3e50;
 }
 
+html{
+  background-color:rgb(246, 240, 126);
+}
+
 #nav {
   padding: 30px;
 }
@@ -28,5 +35,13 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.shop_logo_space{
+  text-align:left;
+}
+
+.shop_logo{
+  filter:saturate(60%)
 }
 </style>
