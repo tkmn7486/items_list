@@ -3,63 +3,65 @@
     <!-- 機種詳細 -->
     <div class="phone_state" :style="{display:phone_state_display}">
       <div class="phone_state_border">
-        <h2>機種名：{{state_phone_name}}（{{state_phone_type}}）</h2>
-        <h3>対応キャリア：{{state_phone_career}}</h3>
-        <img class="state_img" :src="state_phone_img"/>
-        <div class="tables">
-          <div class="phone_specs">
-            <table>
-              <tr>
-                <td>OS</td>
-                <td>{{phone_OS}}</td>
-              </tr>
-              <tr>
-                <td>対応バージョン</td>
-                <td>{{phone_Max_OS}}</td>
-              </tr>
-              <tr>
-                <td>メモリ</td>
-                <td>{{phone_ram}}GB</td>
-              </tr>
-              <tr>
-                <td>ストレージ</td>
-                <td>{{phone_rom}}GB</td>
-              </tr>
-            </table>
+        <div>
+          <h2>機種名：{{state_phone_name}}（{{state_phone_type}}）</h2>
+          <h3>対応キャリア：{{state_phone_career}}</h3>
+          <img class="state_img" :src="state_phone_img"/>
+          <div class="tables">
+            <div class="phone_specs">
+              <table>
+                <tr>
+                  <td>OS</td>
+                  <td>{{phone_OS}}</td>
+                </tr>
+                <tr>
+                  <td>対応バージョン</td>
+                  <td>{{phone_Max_OS}}</td>
+                </tr>
+                <tr>
+                  <td>メモリ</td>
+                  <td>{{phone_ram}}GB</td>
+                </tr>
+                <tr>
+                  <td>ストレージ</td>
+                  <td>{{phone_rom}}GB</td>
+                </tr>
+              </table>
+            </div>
+
+    <!-- アプリ対応状況 -->
+            <div class="app_available">
+              <table class="app_ava_table">
+                <tr>
+                  <td><img class="app_icon" src="../icon/LINE_icon.png"></td>
+                  <td><img class="app_icon" src="../icon/Slack_icon.jpg"></td>
+                  <td><img class="app_icon" src="../icon/ZOOM_icon.jpg"></td>
+                </tr>
+                <tr>
+                  <td>{{LINE_ava}}</td>
+                  <td>{{Slack_ava}}</td>
+                  <td>{{ZOOM_ava}}</td>
+                </tr>
+              </table>
+              <table class="app_ava_table2">
+                <tr>
+                  <td><img class="app_icon" src="../icon/Twitter_icon.jpg"></td>
+                  <td><img class="app_icon" src="../icon/Instagram_icon.jpg"></td>
+                  <td><img class="app_icon" src="../icon/FaceBook_icon.png"></td>
+                  <td><img class="app_icon" src="../icon/TikToc_icon.png"></td>
+                </tr>
+                <tr>
+                  <td>{{Twitter_ava}}</td>
+                  <td>{{Instagram_ava}}</td>
+                  <td>{{FaceBook_ava}}</td>
+                  <td>{{TikToc_ava}}</td>
+                </tr>
+              </table>
+            </div>
           </div>
 
-  <!-- アプリ対応状況 -->
-          <div class="app_available">
-            <table class="app_ava_table">
-              <tr>
-                <td><img class="app_icon" src="../icon/LINE_icon.png"></td>
-                <td><img class="app_icon" src="../icon/Slack_icon.jpg"></td>
-                <td><img class="app_icon" src="../icon/ZOOM_icon.jpg"></td>
-              </tr>
-              <tr>
-                <td>{{LINE_ava}}</td>
-                <td>{{Slack_ava}}</td>
-                <td>{{ZOOM_ava}}</td>
-              </tr>
-            </table>
-            <table class="app_ava_table2">
-              <tr>
-                <td><img class="app_icon" src="../icon/Twitter_icon.jpg"></td>
-                <td><img class="app_icon" src="../icon/Instagram_icon.jpg"></td>
-                <td><img class="app_icon" src="../icon/FaceBook_icon.png"></td>
-                <td><img class="app_icon" src="../icon/TikToc_icon.png"></td>
-              </tr>
-              <tr>
-                <td>{{Twitter_ava}}</td>
-                <td>{{Instagram_ava}}</td>
-                <td>{{FaceBook_ava}}</td>
-                <td>{{TikToc_ava}}</td>
-              </tr>
-            </table>
-          </div>
+          <h2>ID：{{state_phone_s_id}}</h2>
         </div>
-
-        <h2>ID：{{state_phone_s_id}}</h2>
         <button @click="close_state">閉じる</button>
       </div>
     </div>
@@ -92,7 +94,7 @@ export default {
     let used_phone_list = ref([
       {maker:"SONY", name:"Xperia XZ Premium", type:"SO-04J",career:"au", rom:"64", ram:"4",OS:"Android",Max_OS:9,img:"SO-04J.jpeg", s_id:"SSK600"},
       {maker:"Apple", name:"iPhone 6", type:"A1586",career:"SoftBank", rom:"64", ram:"1",OS:"iOS",Max_OS:12.5,img:"iPhone6.jpeg", s_id:"SSK100"},
-      {name:"iPhone 5s", type:"A1586",career:"Docomo", rom:"64", ram:"1",img:"none", s_id:"SSK100"},
+      {name:"iPhone 5s", type:"A1586",career:"Docomo", rom:"64", ram:"1",OS:"12",img:"none", s_id:"SSK100"},
       {name:"iPhone 4s", type:"A1586",career:"SIMフリー", rom:"64", ram:"1",img:"none", s_id:"SSK100"},
       {name:"iPhone 3Gs", type:"A1586",career:"SoftBank", rom:"64",ram:"1",img:"none", s_id:"SSK100"},
     ])
